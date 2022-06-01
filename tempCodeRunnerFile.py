@@ -22,6 +22,3 @@ def mergeSort(array):
 
 array=[6,5,12,10,9,1]
 mergeSort(array)
-print("sorted array is")
-for i in range(len(array)):
-    print(array[i],end=" , ")
