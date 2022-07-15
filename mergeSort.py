@@ -1,27 +1,35 @@
-def mergeSort(array):
-    if len(array)>1:
-        r=len(array)//2
-        l=array[:r]
-        m=array[r:]
-        mergeSort(l)
-        mergeSort(m)
-        i=j=k=0
-        while i<len(l) and j<len(m):
-            if l[i]<m[j]:
-                array[k]=l[i]
-                i+=1
-                k+=1
-        while i<len(l):
-            array[k]=l[i]
-            i+=1
-            k+=1
-        while j<len(m):
-            array[k]=m[j]
-            j+=1
-            k+=1
+def mergeSort(arr):
+	if len(arr) > 1:
+		mid = len(arr)//2
+		L = arr[:mid]
+		R = arr[mid:]
+		mergeSort(L)
+		mergeSort(R)
+		i = j = k = 0
+		while i < len(L) and j < len(R):
+			if L[i] < R[j]:
+				arr[k] = L[i]
+				i += 1
+			else:
+				arr[k] = R[j]
+				j += 1
+			k += 1
 
-array=[6,5,12,10,9,1]
-mergeSort(array)
-print("sorted array is")
-for i in range(len(array)):
-    print(array[i],end=" , ")
+		 
+		while i < len(L):
+			arr[k] = L[i]
+			i += 1
+			k += 1
+
+		while j < len(R):
+			arr[k] = R[j]
+			j += 1
+			k += 1
+arr = [12, 11, 13, 5, 6, 7]
+mergeSort(arr)
+print(arr)
+
+
+# d={}
+# d.update({1:'ki'})
+# print(d)
